@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 import math
 
+import os
+
+st.write("Aktuální pracovní adresář:", os.getcwd())
+st.write("Seznam souborů v ./data/:", os.listdir("data"))
+
+
 # --- DATA ---
 @st.cache_data
 def load_data():
