@@ -5,8 +5,8 @@ import math
 # --- DATA ---
 @st.cache_data
 def load_data():
-    df_rohlik = pd.read_csv("output/p_04_ingredience_rohlik_final.csv")
-    df_kosik = pd.read_csv("output/p_04_ingredience_kosik_final.csv")
+    df_rohlik = pd.read_csv("data/p_04_ingredience_rohlik_final.csv")
+    df_kosik = pd.read_csv("data/p_04_ingredience_kosik_final.csv")
     df_recepty = pd.read_csv("data/recept_seznam_ingredienci.csv")
 
     # Čištění
