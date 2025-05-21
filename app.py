@@ -53,9 +53,11 @@ def get_products(df_shop, ingredient_list):
 # --- UI ---
 st.title("Nákupní seznam podle receptů")
 
+st.sidebar.header("Nastavení")
+
 recepty_list = df_recepty["recept_nazev"].unique().tolist()
-vybrane_recepty = st.multiselect("Vyber recepty", recepty_list)
-pocet_porci = st.slider("Vyber počet porcí:", 1, 10, 4)
+vybrane_recepty = st.sidebar.multiselect("Vyber recepty", recepty_list)
+pocet_porci = st.sidebar.slider("Vyber počet porcí:", 1, 10, 4)
 #zobrazeni = st.radio("Způsob výpočtu cen:", ["Cena za balení", "Cena za recept"])
 
 if vybrane_recepty:
@@ -74,10 +76,10 @@ if vybrane_recepty:
     ingredience_df = get_ingredients_for_recepty(df_recepty, vybrane_recepty, pocet_porci)
     suroviny = ingredience_df["ingredience_nazev"].tolist()
 
-    nepotrebuju = st.multiselect("Vyber suroviny, které UŽ máš doma", suroviny)
+    nepotrebuju = st.sidebar.multiselect("Vyber suroviny, které UŽ máš doma", suroviny)
     k_nakupu = [s for s in suroviny if s not in nepotrebuju]
 
-    zobrazeni = st.radio("Způsob výpočtu cen:", ["Cena za balení", "Cena za recept"])
+    zobrazeni = st.sidebar.radio("Způsob výpočtu cen:", ["Cena za balení", "Cena za recept"])
 
     if k_nakupu:
         st.subheader("Nákupní seznam")
