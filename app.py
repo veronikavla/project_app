@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 import math
 
-# import os
-
-
-
 # --- DATA ---
 @st.cache_data
 def load_data():
