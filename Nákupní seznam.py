@@ -23,7 +23,7 @@ def load_data():
 
 df_rohlik, df_kosik, df_recepty = load_data()
 
-# --- FUNKCE ---
+# --- FUNKCE xx --- 
 def convert_units(quantity, from_unit, to_unit):
     conversions = {
         ("g", "kg"): lambda x: x / 1000,
